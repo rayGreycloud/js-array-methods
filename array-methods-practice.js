@@ -56,7 +56,7 @@ const people = ['Beck, Glenn', 'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick
 'Bergman, Ingmar', 'Berio, Luciano', 'Berle, Milton', 'Berlin, Irving', 'Berne, Eric', 'Bernhard, Sandra', 'Berra, Yogi', 'Berry, Halle', 'Berry, Wendell', 'Bethea, Erin', 'Bevan, Aneurin', 'Bevel, Ken', 'Biden, Joseph', 'Bierce, Ambrose', 'Biko, Steve', 'Billings, Josh', 'Biondo, Frank', 'Birrell, Augustine', 'Black Elk', 'Blair, Robert',
 'Blair, Tony', 'Blake, William'];
 console.log("7. Sort the people alphabetically by last name")
-const alphabeticList = people.sort(function(previousOne, nextOne) {
+const alphabeticList = people.sort((previousOne, nextOne) => {
   const [previousLastname, previousFirstname] = previousOne.split(', ');
   const [nextLastname, nextFirstname] = nextOne.split(', ');
   return previousLastname > nextLastname ? 1 : -1;
@@ -64,5 +64,16 @@ const alphabeticList = people.sort(function(previousOne, nextOne) {
 console.log(alphabeticList);
 
 // Array.prototype.reduce()
-// 8. Sum up the instances of each of these
-const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+console.log("8. Sum up the instances of each item in list")
+const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
+const transpo = data.reduce(function(obj, item) {
+  // If no entry, create it and initalize at zero
+  if (!obj[item]) {
+    obj[item] = 0;
+  }
+  // Increment item number each time found
+  obj[item]++;
+  return obj;
+}, {}); // Start with empty object 
+
+console.log(transpo);
