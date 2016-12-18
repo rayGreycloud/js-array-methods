@@ -9,8 +9,6 @@ const people = [
   { name: 'Lux', year: 2015 },
 ];
 // Ex.1 Is at least one person 19?
-const isAdult = people
-console.log({isAdult});
 
 // Array.prototype.every()
 // Ex.2 Is everyone 19?
