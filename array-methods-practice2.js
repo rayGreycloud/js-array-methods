@@ -27,7 +27,13 @@ const comments = [
   { text: 'Ramen in my fav food ever', id: 123523 },
   { text: 'Nice Nice Nice!', id: 542328 }
 ];
-// Ex.3 Find the comment with ID = 823423
+console.log("Ex.3 Find the comment with ID = 823423");
+
+function findComment(comment) {
+  return comment.id === 823423;
+}
+
+console.log(comments.find(findComment));
 
 
 // Array.prototype.findIndex()
