@@ -8,15 +8,16 @@ const people = [
   { name: 'Irv', year: 1970 },
   { name: 'Lux', year: 2015 },
 ];
-// Ex.1 Is at least one person 18?
-const isAdult = people.some(person => new Date().getFullYear() - person.year >= 18);
+console.log ("Ex.1 Is at least one person 18 or older?");
+const someOneIsAdult = people.some(person => new Date().getFullYear() - person.year >= 18);
 
-console.log({isAdult});
+console.log({someOneIsAdult});
 
 // Array.prototype.every()
-// Ex.2 Is everyone 18?
+console.log ("Ex.2 Is everyone 18 or older?");
+const everyOneIsAdult = people.every(person => new Date().getFullYear() - person.year >= 18);
 
-
+console.log({everyOneIsAdult});
 
 // Array.prototype.find()
 const comments = [
