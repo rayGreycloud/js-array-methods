@@ -9,12 +9,9 @@ const people = [
   { name: 'Lux', year: 2015 },
 ];
 // Ex.1 Is at least one person 18?
-const isAdult = people.some(function(person) {
+const isAdult = people.some(person => {
   const currentYear = new Date().getFullYear();
-  if (currentYear - person.year >= 18) {
-    return true;
-  }
-  // some() automatically returns false if no array item fulfills condition
+  return currentYear - person.year >= 18;
 });
 
 console.log({isAdult});
