@@ -1,8 +1,6 @@
 // Wes Bos - Array Cardio Day 1
 // Array Methods Practice
 
-// Some data we can work with
-
 const inventors = [
   { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 },
   { first: 'Isaac', last: 'Newton', year: 1643, passed: 1727 },
@@ -12,10 +10,6 @@ const inventors = [
   { first: 'Nicolaus', last: 'Copernicus', year: 1473, passed: 1543 },
   { first: 'Max', last: 'Planck', year: 1858, passed: 1947 },
 ];
-
-const flavours = ['Chocolate Chip', 'Kulfi', 'Caramel Praline', 'Chocolate', 'Burnt Caramel', 'Pistachio', 'Rose', 'Sweet Coconut', 'Lemon Cookie', 'Toffeeness', 'Toasted Almond', 'Black Raspberry Crunch', 'Chocolate Brownies', 'Pistachio Almond', 'Strawberry', 'Lavender Honey', 'Lychee', 'Peach', 'Black Walnut', 'Birthday Cake', 'Mexican Chocolate', 'Mocha Almond Fudge', 'Raspberry'];
-
-const people = ['Beck, Glenn', 'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick', 'Beecher, Henry', 'Beethoven, Ludwig', 'Begin, Menachem', 'Belloc, Hilaire', 'Bellow, Saul', 'Benchley, Robert', 'Benenson, Peter', 'Ben-Gurion, David', 'Benjamin, Walter', 'Benn, Tony', 'Bennington, Chester', 'Benson, Leana', 'Bent, Silas', 'Bentsen, Lloyd', 'Berger, Ric', 'Bergman, Ingmar', 'Berio, Luciano', 'Berle, Milton', 'Berlin, Irving', 'Berne, Eric', 'Bernhard, Sandra', 'Berra, Yogi', 'Berry, Halle', 'Berry, Wendell', 'Bethea, Erin', 'Bevan, Aneurin', 'Bevel, Ken', 'Biden, Joseph', 'Bierce, Ambrose', 'Biko, Steve', 'Billings, Josh', 'Biondo, Frank', 'Birrell, Augustine', 'Black Elk', 'Blair, Robert', 'Blair, Tony', 'Blake, William'];
 
 // Array.prototype.filter()
 console.log("Question 1. Filter the list of inventors for those who were born in the 1500's");
@@ -46,17 +40,28 @@ const oldest = inventors.sort(function(a, b) {
   });
 console.log(oldest);
 
-// 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
-// https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
-const category = document.querySelector('.mw-category');
-// Grab links and convert to array using spread operator
-const links = [...category.querySelectorAll('a')];
-const de = links
-            .map(link => link.textContent)
-            .filter(streetName => streetName.includes('de'));
+// .map() with .filter() (browser only)
+console.log("6. Create a list of Boulevards in Paris that contain 'de' anywhere in the name");
+// // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+// const category = document.querySelector('.mw-category');
+// // Grab links and convert to array using spread operator
+// const links = [...category.querySelectorAll('a')];
+// const de = links
+//             .map(link => link.textContent)
+//             .filter(streetName => streetName.includes('de'));
+// console.log(de);
 
 // Array.prototype.sort()
-// 7. Sort the people alphabetically by last name
+const people = ['Beck, Glenn', 'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick', 'Beecher, Henry', 'Beethoven, Ludwig', 'Begin, Menachem', 'Belloc, Hilaire', 'Bellow, Saul', 'Benchley, Robert', 'Benenson, Peter', 'Ben-Gurion, David', 'Benjamin, Walter', 'Benn, Tony', 'Bennington, Chester', 'Benson, Leana', 'Bent, Silas', 'Bentsen, Lloyd', 'Berger, Ric',
+'Bergman, Ingmar', 'Berio, Luciano', 'Berle, Milton', 'Berlin, Irving', 'Berne, Eric', 'Bernhard, Sandra', 'Berra, Yogi', 'Berry, Halle', 'Berry, Wendell', 'Bethea, Erin', 'Bevan, Aneurin', 'Bevel, Ken', 'Biden, Joseph', 'Bierce, Ambrose', 'Biko, Steve', 'Billings, Josh', 'Biondo, Frank', 'Birrell, Augustine', 'Black Elk', 'Blair, Robert',
+'Blair, Tony', 'Blake, William'];
+console.log("7. Sort the people alphabetically by last name")
+const alphabeticList = people.sort(function(previousOne, nextOne) {
+  const [previousLastname, previousFirstname] = previousOne.split(', ');
+  const [nextLastname, nextFirstname] = nextOne.split(', ');
+  return previousLastname > nextLastname ? 1 : -1;
+});
+console.log(alphabeticList);
 
 // Array.prototype.reduce()
 // 8. Sum up the instances of each of these
