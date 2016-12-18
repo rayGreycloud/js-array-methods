@@ -9,15 +9,13 @@ const people = [
   { name: 'Lux', year: 2015 },
 ];
 // Ex.1 Is at least one person 18?
-const isAdult = people.some(person => {
-  const currentYear = new Date().getFullYear();
-  return currentYear - person.year >= 18;
-});
+const isAdult = people.some(person => new Date().getFullYear() - person.year >= 18);
 
 console.log({isAdult});
 
 // Array.prototype.every()
 // Ex.2 Is everyone 18?
+
 
 
 // Array.prototype.find()
